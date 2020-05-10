@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SaltyBrain/Gulp-test/issues"
   },
-  "homepage": "https://github.com/SaltyBrain/Gulp-test#readme"
+  "homepage": "https://github.com/SaltyBrain/Gulp-test#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
 }
