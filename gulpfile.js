@@ -8,7 +8,7 @@ gulp.task('hello', function(done) {
   done();
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser', function() {
   browserSync.init({
       server: {
           baseDir: "./"
@@ -17,9 +17,10 @@ gulp.task('browser-sync', function() {
   gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
-gulp.task('mincss', function () {
-  gulp.src('src/**/*.css')
+gulp.task('mincss', function (done) {
+  gulp.src('css/*.css')
       .pipe(cssmin())
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest('css'));
+      done();
 });
