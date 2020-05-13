@@ -380,6 +380,8 @@ template {
   .hero__text {
     font-size: 20px;
     max-width: 500px; }
+  .hero__button {
+    margin-right: 20px; }
   .hero__instagram {
     position: absolute;
     top: 0;
