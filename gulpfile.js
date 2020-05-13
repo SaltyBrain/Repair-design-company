@@ -4,6 +4,14 @@ const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 
+function min(done) {
+  src('css/*.css')
+      .pipe(cssmin())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(dest('css'));
+      done();
+};
+
 
 function bs() {
   serveSass();
@@ -24,13 +32,7 @@ function serveSass() {
       .pipe(browserSync.stream());
 };
 
-function min(done) {
-  src('src/**/*.css')
-      .pipe(cssmin())
-      .pipe(rename({suffix: '.min'}))
-      .pipe(dest('dist'));
-      done()
-};
-
 exports.serve = bs;
 exports.min = min;
+
+
