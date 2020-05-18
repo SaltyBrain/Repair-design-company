@@ -696,12 +696,14 @@ img {
   .hero__scroll-down {
     display: none; }
   .hero__content {
-    max-width: 22.86rem; }
+    max-width: 40rem; }
+  .hero__title {
+    max-width: 25rem; }
   .hero__text {
     font-size: 1.29rem; }
   .hero__button {
     display: block;
-    min-width: 22.86rem;
+    min-width: 100%;
     margin-bottom: 1.85rem; } }
 
 @media screen and (max-height: 520px) {
