@@ -318,6 +318,14 @@ template {
 [hidden] {
   display: none; }
 
+header {
+  max-width: 1444px;
+  margin: auto; }
+
+.hero {
+  max-width: 1444px;
+  margin: auto; }
+
 .container {
   max-width: 1236px;
   margin: auto; }
@@ -353,9 +361,6 @@ img {
         margin: 0 10px; }
 
 .header {
-  position: fixed;
-  left: 0;
-  top: 0;
   width: 100%;
   z-index: 1;
   background-color: #131313;
@@ -420,11 +425,10 @@ img {
 
 .hero {
   position: relative;
-  display: flex;
   padding-top: 100px;
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
-  height: 100vh;
-  color: #fff; }
+  color: #fff;
+  height: 75vh; }
   .hero:before {
     content: '';
     position: absolute;
@@ -436,7 +440,8 @@ img {
   .hero__content {
     position: relative;
     max-width: 47.85rem;
-    margin-left: 4.28rem; }
+    margin-left: 4.28rem;
+    margin-top: 7.14rem; }
   .hero__text {
     font-size: 1.57rem;
     line-height: 130%;
@@ -448,7 +453,7 @@ img {
     top: 0;
     left: 0;
     max-width: 80px;
-    height: 100vh; }
+    height: 75vh; }
   .hero__scroll-down {
     position: absolute;
     display: flex;
