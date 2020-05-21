@@ -1,12 +1,12 @@
 @media screen and ( max-width:  1250px)
   html
-    font-size: 12px
+    font-size: 12px 
   .nav
     &__item
       margin-right: 0.8rem
   .section-title
     &__text
-      width: 72%
+      width: 72% 
 
 @media screen and ( max-width:  1080px)
   .card
@@ -31,10 +31,10 @@
 
 @media screen and ( max-width: 992px )
   .hero
+    &__content
+      padding-left: 0
     &__instagram
       display: none
-    &__content
-      margin-left: 0
   .nav
     &__item
       display: none
@@ -75,6 +75,7 @@
       display: none
     &__content
       max-width: 40rem
+      margin-left: 0
     &__title
       max-width: 25rem
     &__text
@@ -87,8 +88,13 @@
     &__pricetag
       font-size: 0.7rem
 
-@media screen and ( max-height: 520px )
-   .hero
+@media screen and ( max-width: 500px )
+  .card
+    margin-bottom: 0
+
+@media screen and ( max-height: 780px )
+  .hero
+    padding-top: 1rem
     &__scroll-down
       display: none
 
