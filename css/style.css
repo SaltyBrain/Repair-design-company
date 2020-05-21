@@ -319,6 +319,7 @@ template {
   display: none; }
 
 .container {
+  width: 85%;
   max-width: 1236px;
   margin: auto; }
 
@@ -547,7 +548,6 @@ img {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03); }
 
 .card__title {
-  display: block;
   font-family: 'Yeseva One', cursive;
   font-size: 1.29rem;
   margin-top: 0;
