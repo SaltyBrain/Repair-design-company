@@ -465,10 +465,8 @@ img {
   bottom: 0;
   right: 0;
   z-index: 1000;
-  width: 110px;
   border-radius: 50%;
-  opacity: 0.3;
-  cursor: pointer; }
+  opacity: 0.3; }
 
 #scroll_top:hover {
   opacity: 1; }
@@ -546,14 +544,12 @@ img {
       -webkit-animation: arrow-img 1s linear infinite -1.5s;
       animation: arrow-img 1s linear infinite -1.5s; }
   .hero__scroll-up {
-    display: flex;
-    align-items: center;
     text-decoration: none;
     text-transform: uppercase;
     color: #E3B873;
     font-family: 'Futura Book', sans-serif;
     font-size: 1rem;
-    margin-right: 10px;
+    margin-right: 30px;
     margin-bottom: 50px; }
 
 .instagram {
