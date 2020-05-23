@@ -459,6 +459,33 @@ img {
     cursor: pointer;
     margin-right: 0.64rem; }
 
+#scroll_top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  opacity: 1;
+    opacity-cursor: pointer; }
+
+#scroll_top::after {
+  content: '';
+  display: flex;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #E3B873;
+  margin-left: 12px;
+  border-radius: 50%;
+  background: url("../img/arrow-up.svg") no-repeat center;
+  background-size: 50%; }
+
+#scroll_top:hover::after {
+  -webkit-animation: arrow-img-up 1s linear infinite -1.5s;
+  animation: arrow-img-up 1s linear infinite -1.5s; }
+
 .hero {
   position: relative;
   display: flex;
@@ -718,6 +745,24 @@ img {
     transform: translate(0, 0px); }
   100% {
     transform: translate(0, 10px); } }
+
+@-webkit-keyframes arrow-img-up {
+  0% {
+    transform: translate(0, 0); }
+  10%, 90% { }
+  50% {
+    transform: translate(0, 0px); }
+  100% {
+    transform: translate(0, -10px); } }
+
+@keyframes arrow-img-up {
+  0% {
+    transform: translate(0, 0); }
+  10%, 90% { }
+  50% {
+    transform: translate(0, 0px); }
+  100% {
+    transform: translate(0, -10px); } }
 
 @media screen and (max-width: 1250px) {
   html {
