@@ -36,7 +36,7 @@
       </div>
       <div class="container">
         <div class="hero__content">
-          <h1 class="title hero__title">Турецкий ремонт            в&nbsp;<span class="title--primary">ростове-на-дону</span></h1>
+          <h1 class="title hero__title">Турецкий ремонт в&nbsp;<span class="title--primary">ростове-на-дону</span></h1>
           <p class="hero__text">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
           <button class="button hero__button button--primary">Рассчитать стоимость</button>
           <button class="button hero__button button--outline">Отправить заявку</button>
@@ -66,7 +66,7 @@
           </div>
         </div>
         <!-- /.section-title -->
-      <div class="row">
+      <div class="row row-types">
         <div class="col">
           <div class="card types__card">
             <img src="img/cosm-repair.png" alt="Косметический ремонт" class="card__image">
@@ -297,5 +297,32 @@
     <!-- /.section types -->
 
   </main>
+
+  <div class="modal modal-dialog">
+    <button class="modal__close">
+
+    </button>
+    <h3 class="modal__title">
+      Оставьте заявку и наш менеджер свяжется с вами 
+    </h3>
+    <form action="" class="form modal__form">
+      <label for="user-name" class="label form__label">Имя</label>
+      <input type="text" class="input form__input" id="user-name">
+      <label for="user-phone" class="label form__label">Телефон</label>
+      <input type="tel" class="input form__input" id="user-phone">
+      <label for="user-email" class="label form__label">Email</label>
+      <input type="email" class="input form__input" id="user-email">
+      <div class="policy">
+        <input type="checkbox" name="policy-checkbox" id="policy-checkbox">
+        <label for="policy-checkbox">Я соглашаюсь с обработкой данных</label>
+      </div>
+      <!-- /.policy -->
+      <button class="button button--primary modal__button">Отправить заявку</button>
+    </form>
+    <!-- /.form modal__form -->
+    <!-- /.modal__title -->
+    <!-- /.modal__close -->
+  </div>
+  <!-- /.modal modal-dialog -->
 </body>
 </html>
