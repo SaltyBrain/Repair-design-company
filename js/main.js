@@ -13,4 +13,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   closeBtn.addEventListener('click', switchModal);
 
+  window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+      modal.classList.remove('modal--visible');
+  }
+  });
+
 });

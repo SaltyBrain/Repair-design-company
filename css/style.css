@@ -319,7 +319,7 @@ template {
   display: none; }
 
 .container {
-  max-width: 1256px;
+  max-width: 1236px;
   margin: auto;
   width: 88%; }
 
@@ -575,7 +575,6 @@ img {
   justify-content: space-between; }
 
 .col {
-  flex-basis: 32%;
   max-height: 100%; }
 
 .card__text {
