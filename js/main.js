@@ -1,4 +1,4 @@
-/* document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) { 
    const modal = document.querySelector('.modal');
    const modalButton = document.querySelectorAll('[data-toggle = modal]');
    const closeBtn = document.querySelector('.modal__close');
@@ -19,10 +19,16 @@
   }
   });
 
+  window.onkeydown = function( event ) {
+    if ( event.keyCode == 27 ) {
+      modal.classList.remove('modal--visible');
+    }
+};
+
 });
- */
+
 // 
- $(document).ready(function () {
+/*  $(document).ready(function () {
    var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
     closeBtn = $('.modal__close');
@@ -34,13 +40,13 @@
     modal.toggleClass('modal--visible');
   });
 
- });
+ });*/
 
 
  $(function(){
 	$(window).scroll(function(){
 		if($(window).scrollTop() > 100) {
-			$('#scroll_top').show();
+			$('#scroll_top').show();  
 		} else {
 			$('#scroll_top').hide();
 		}

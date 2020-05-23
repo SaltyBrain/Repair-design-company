@@ -462,25 +462,27 @@ img {
 #scroll_top {
   display: none;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 0;
+  right: 0;
   z-index: 1000;
-  width: 32px;
-  height: 32px;
+  width: 110px;
   border-radius: 50%;
-  opacity: 1;
-    opacity-cursor: pointer; }
+  opacity: 0.3;
+  cursor: pointer; }
+
+#scroll_top:hover {
+  opacity: 1; }
 
 #scroll_top::after {
   content: '';
   display: flex;
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #E3B873;
   margin-left: 12px;
   border-radius: 50%;
   background: url("../img/arrow-up.svg") no-repeat center;
-  background-size: 50%; }
+  background-size: 70%; }
 
 #scroll_top:hover::after {
   -webkit-animation: arrow-img-up 1s linear infinite -1.5s;
@@ -543,6 +545,16 @@ img {
       background: url("../img/arrow-down.svg") no-repeat center;
       -webkit-animation: arrow-img 1s linear infinite -1.5s;
       animation: arrow-img 1s linear infinite -1.5s; }
+  .hero__scroll-up {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #E3B873;
+    font-family: 'Futura Book', sans-serif;
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-bottom: 50px; }
 
 .instagram {
   display: flex;

@@ -64,24 +64,25 @@
 #scroll_top
 	display: none
 	position: fixed
-	bottom: 30px
-	right: 30px
+	bottom: 0
+	right: 0
 	z-index: 1000
-	width: 32px
-	height: 32px
+	width: 110px
 	border-radius: 50%
-	opacity: 1
+	opacity: 0.3
   cursor: pointer
+#scroll_top:hover
+  opacity: 1
 #scroll_top::after
-      content: ''
-      display: flex
-      width: 28px
-      height: 28px
-      border: 2px solid $primary
-      margin-left: 12px
-      border-radius: 50%
-      background: url('../img/arrow-up.svg') no-repeat center
-      background-size: 50%
+  content: ''
+  display: flex
+  width: 40px
+  height: 40px
+  border: 2px solid $primary
+  margin-left: 12px
+  border-radius: 50%
+  background: url('../img/arrow-up.svg') no-repeat center
+  background-size: 70%
 #scroll_top:hover::after
-      animation: arrow-img-up 1s linear infinite -1.5s
+  animation: arrow-img-up 1s linear infinite -1.5s
 
