@@ -51,14 +51,13 @@
     }
   });
   
- });
+  $(document).mouseup(function (e) {
+    if (modal.has(e.target).length === 0){
+        modal.removeClass('modal--visible');
+    }
+  });
 
- $(document).mouseup(function (e) {
-  var container = $(".modal");
-  if (container.has(e.target).length === 0){
-      container.removeClass('modal--visible');
-  }
-});
+ });
 
  $(function(){
 	$(window).scroll(function(){
