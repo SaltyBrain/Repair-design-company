@@ -50,12 +50,6 @@
         modal.removeClass('modal--visible');
     }
   });
-  
-  $(document).mouseup(function (e) {
-    if (modal.has(e.target).length === 0){
-        modal.removeClass('modal--visible');
-    }
-  });
 
  });
 
@@ -71,5 +65,10 @@
 	$('#scroll_top').click(function(){
 		$('html, body').animate({scrollTop: 0}, 600);
 		return false;
-	});
+  });
+  
+  //initialize swiper when document ready
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true
+  })
 });
