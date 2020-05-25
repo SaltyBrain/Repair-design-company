@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+/* document.addEventListener("DOMContentLoaded", function(event) { 
    const modal = document.querySelector('.modal');
    const modalButton = document.querySelectorAll('[data-toggle = modal]');
    const closeBtn = document.querySelector('.modal__close');
@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 };
 
-});
+}); */
 
 // 
-/*  $(document).ready(function () {
+ $(document).ready(function () {
    var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
     closeBtn = $('.modal__close');
@@ -40,8 +40,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     modal.toggleClass('modal--visible');
   });
 
- });*/
+  $(this).keydown(function(eventObject){
+    if (eventObject.which == 27)
+      modal.removeClass('modal--visible');
+  });
 
+  $(document).mouseup(function (e) {
+    if (modal.has(e.target).length === 0){
+        modal.removeClass('modal--visible');
+    }
+  });
+
+ });
 
  $(function(){
 	$(window).scroll(function(){
@@ -55,5 +65,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('#scroll_top').click(function(){
 		$('html, body').animate({scrollTop: 0}, 600);
 		return false;
-	});
+  });
+  
+  //initialize swiper when document ready
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+  var next = $('.swiper-button-next');
+  var prev = $('.swiper-button-prev');
+  var bullets = $('.swiper-pagination');
+
+  next.css('left', prev.width() + 25 + bullets.width() + 25);
+  bullets.css('left', prev.width() + 25)
 });

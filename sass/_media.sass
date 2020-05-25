@@ -58,6 +58,15 @@
   .section-title
     &__text
       width: 100%
+    &__word
+      &::after
+        display: none
+  .swiper
+    &-slide
+      &__text
+        flex-basis: 50%
+  .col-50
+    max-width: 70%
 
 @media screen and ( max-width: 570px )
   .contacts
@@ -85,9 +94,33 @@
   .project-card
     &__pricetag
       font-size: 0.7rem
+  .swiper
+    &-slide
+      &__heading
+        font-size: 1rem
+  .col-50
+    max-width: 100%
+  .finished
+  padding-bottom: 2.5rem
+@media screen and ( max-width: 400px )
+  .hero
+    &__scroll
+      &-up
+        margin-right: 0
+  #scroll_top
+    opacity: 1
+    &::after
+      border: none
+      background: url('../img/arrow-up.svg') no-repeat center
+      background-size: 40%
+  .swiper
+    &-slide
+      &__heading
+        font-size: 0.8rem
 
 @media screen and ( max-height: 590px )
    .hero
     &__scroll-down
       display: none
+
 
