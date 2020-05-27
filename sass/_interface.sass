@@ -97,3 +97,47 @@ input
   background-size: 70%
 #scroll_top:hover::after
   animation: arrow-img-up 1s linear infinite -1.5s
+
+.footer
+  &__policy
+    &__checkbox
+      opacity: 0
+      visibility: hidden
+      &:checked +
+        .footer__policy__label
+          &::before
+            background: $primary url('../img/check.svg') no-repeat center
+    &__label
+      display: flex
+      align-items: center
+      font-size: 1.142rem
+      &::before
+        content: ''
+        width: 18px
+        height: 18px
+        border: 1px solid $primary
+        border-radius: 1px
+        cursor: pointer
+        margin-right: 0.64rem
+
+.control
+  &__policy
+    &__checkbox
+      opacity: 0
+      visibility: hidden
+      &:checked +
+        .control__policy__label
+          &::before
+            background: $primary url('../img/check.svg') no-repeat center
+    &__label
+      display: flex
+      align-items: center
+      font-size: 1.142rem
+      &::before
+        content: ''
+        width: 18px
+        height: 18px
+        border: 1px solid $primary
+        border-radius: 1px
+        cursor: pointer
+        margin-right: 0.64rem
