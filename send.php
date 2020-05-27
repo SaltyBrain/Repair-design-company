@@ -33,7 +33,7 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'New Request from webpage';
-    $mail->Body    = "Имя: ${userName}, Имя: ${userPhone}, Имя: ${userEmail}";
+    $mail->Body    = "Имя: ${userName}, Телефон: ${userPhone}, Почта: ${userEmail}";
 
     if ($mail->send()) {
       echo 'ok';

@@ -114,12 +114,12 @@ $(".modal__form").validate({
     userPhone: "Телефон обязателен, заполните поле",
     userEmail: {
       required: "Обязательно укажите email",
-      email: "Введите в формате name@domain.com"
+      email: "Введите корректный email name@domain.com"
     }
   },
     errorClass: "invalid",
 
-    submitHandler: function(form) {
+ /*    submitHandler: function(form) {
       $.ajax({
         type: "POST",
         url: "send.php",
@@ -134,9 +134,104 @@ $(".modal__form").validate({
           console.error('Ошибка запроса ' + response);
         }
       });
-    }
+    } */
 });
 
+$(".control__form").validate({
+  rules: {
+    // simple rule, converted to {required:true}
+    userName: {
+      required: true,
+      minlength: 2,
+      maxlength: 15
+    },
+    userPhone: "required",
+    // compound rule
+    userEmail: {
+      required: true,
+      email: true
+    }
+  },
+  messages: {
+    userName: {
+      required: "Имя обязательно, заполните поле",
+      minlength: "Имя не короче двух букв",
+      maxlength: "Имя не должно быть больше пятнадцати символов"
+    },
+    userPhone: "Телефон обязателен, заполните поле",
+    userEmail: {
+      required: "Обязательно укажите email",
+      email: "Введите корректный email name@domain.com"
+    }
+  },
+    errorClass: "invalid",
+
+ /*    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 минут')
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        },
+        error: function(response) {
+          console.error('Ошибка запроса ' + response);
+        }
+      });
+    } */
+});
+
+$(".footer__form").validate({
+  rules: {
+    // simple rule, converted to {required:true}
+    userName: {
+      required: true,
+      minlength: 2,
+      maxlength: 15
+    },
+    userPhone: "required",
+    // compound rule
+    userEmail: {
+      required: true,
+      email: true
+    },
+    userQuestion: "required"
+  },
+  messages: {
+    userName: {
+      required: "Имя обязательно, заполните поле",
+      minlength: "Имя не короче двух букв",
+      maxlength: "Имя не должно быть больше пятнадцати символов"
+    },
+    userPhone: "Телефон обязателен, заполните поле",
+    userEmail: {
+      required: "Обязательно укажите email",
+      email: "Введите корректный email в формате name@domain.com"
+    },
+    userQuestion: "Пожалуйста, уточните, что вас интересует"
+  },
+    errorClass: "invalid",
+
+/*     submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 минут')
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        },
+        error: function(response) {
+          console.error('Ошибка запроса ' + response);
+        }
+      });
+    } */
+});
 // Маска для телефона
 
 $('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
@@ -145,7 +240,7 @@ $('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
   // создание яндекс карты
   ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
-            center: [55.751574, 37.573856],
+            center: [60.005036, 30.210280],
             zoom: 9
         }, {
             searchControlProvider: 'yandex#search'
@@ -164,9 +259,9 @@ $('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: 'img/marker.png',
+            iconImageHref: 'img/pasha-img.jpg',
             // Размеры метки.
-            iconImageSize: [32, 32],
+            iconImageSize: [32, 40],
             // Смещение левого верхнего угла иконки относительно
             // её "ножки" (точки привязки).
             iconImageOffset: [-5, -38]

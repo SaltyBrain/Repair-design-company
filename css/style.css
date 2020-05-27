@@ -478,7 +478,9 @@ img {
   .input--light {
     color: #fff; }
   .input__control {
-    border-bottom: 1px solid rgba(54, 54, 54, 0.3); }
+    border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+    color: #131313;
+    padding-left: 0.5rem; }
 
 .policy__checkbox {
   opacity: 0;
