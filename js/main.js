@@ -95,7 +95,8 @@ $(".modal__form").validate({
     // simple rule, converted to {required:true}
     userName: {
       required: true,
-      minlength: 2
+      minlength: 2,
+      maxlength: 15
     },
     userPhone: "required",
     // compound rule
@@ -106,17 +107,34 @@ $(".modal__form").validate({
   },
   messages: {
     userName: {
-      required: "Имя обязательно",
-      minlength: "Имя не короче двух букв"
+      required: "Имя обязательно, заполните поле",
+      minlength: "Имя не короче двух букв",
+      maxlength: "Имя не должно быть больше пятнадцати символов"
     },
-    userPhone: "Телефон обязателен",
+    userPhone: "Телефон обязателен, заполните поле",
     userEmail: {
       required: "Обязательно укажите email",
       email: "Введите в формате name@domain.com"
     }
   },
-    errorClass: "invalid"
+    errorClass: "invalid",
 
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 минут')
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        },
+        error: function(response) {
+          console.error('Ошибка запроса ' + response);
+        }
+      });
+    }
 });
 
 // Маска для телефона
