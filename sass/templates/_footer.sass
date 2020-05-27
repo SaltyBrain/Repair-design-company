@@ -1,10 +1,15 @@
 .footer
-  &-wrap
+  background: url('../img/footer-bg.jpg') no-repeat center / cover
+  &__menu
+    background-color: $dark
+    padding: 4.285rem 0
+  &__wrap
     background-color: $dirt
     max-width: 63.07rem
     margin: auto
     padding: 2.5rem
     margin-top: -20rem
+    margin-bottom: 3.714rem
   &__title
     text-transform: uppercase
     font-family: 'Yeseva One', cursive
@@ -16,16 +21,24 @@
   &__form
     display: flex
     flex-wrap: wrap
-  &__input-group
-    display: flex
-    flex-direction: column
-    flex-basis: 50%
-    &--fool-width
-      flex-basis: 100%
+    max-width: 37.142rem
+    justify-content: space-between
+    margin: auto
+  &__input
+    padding-top: 0.3rem
+    &-group
+      display: flex
+      flex-direction: column
+      flex-basis: 45%
+      margin-bottom: 3.2rem
+      &--fool-width
+        flex-basis: 100%
+        margin-bottom: 2rem
   &__policy
     flex-basis: 100%
-    margin-bottom: 2rem
+    margin-bottom: 3.6rem
   &__button
     margin: auto
+    padding: 1.285rem 4.785rem
   &__section--dark
-    padding-top: 3rem
+    padding-top: 4rem
