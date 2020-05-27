@@ -51,8 +51,6 @@
     }
   });
 
- });
-
  $(function(){
 	$(window).scroll(function(){
 		if($(window).scrollTop() > 100) {
@@ -85,4 +83,44 @@
 
   next.css('left', prev.width() + 25 + bullets.width() + 25);
   bullets.css('left', prev.width() + 25)
+});
+
+// активация анимаций wow
+new WOW().init();
+
+// Валидация формы
+
+$(".modal__form").validate({
+  rules: {
+    // simple rule, converted to {required:true}
+    userName: {
+      required: true,
+      minlength: 2
+    },
+    userPhone: "required",
+    // compound rule
+    userEmail: {
+      required: true,
+      email: true
+    }
+  },
+  messages: {
+    userName: {
+      required: "Имя обязательно",
+      minlength: "Имя не короче двух букв"
+    },
+    userPhone: "Телефон обязателен",
+    userEmail: {
+      required: "Обязательно укажите email",
+      email: "Введите в формате name@domain.com"
+    }
+  },
+    errorClass: "invalid"
+
+});
+
+// Маска для телефона
+
+$('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
+
 });
