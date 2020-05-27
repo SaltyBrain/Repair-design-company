@@ -950,6 +950,11 @@ input.invalid {
     padding: 1.285rem 4.785rem; }
   .footer__section--dark {
     padding-top: 4rem; }
+  .footer__map {
+    max-width: 66.07rem;
+    margin: auto;
+    margin-bottom: 4.28rem;
+    min-height: 465px; }
 
 @-webkit-keyframes arrow-img {
   0% {
