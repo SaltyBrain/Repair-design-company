@@ -98,7 +98,10 @@ $(".modal__form").validate({
       minlength: 2,
       maxlength: 15
     },
-    userPhone: "required",
+    userPhone: {
+      required: true,
+      minlength: 16
+    },
     // compound rule
     userEmail: {
       required: true,
@@ -111,7 +114,10 @@ $(".modal__form").validate({
       minlength: "Имя не короче двух букв",
       maxlength: "Имя не должно быть больше пятнадцати символов"
     },
-    userPhone: "Телефон обязателен, заполните поле",
+    userPhone: {
+      required: "Телефон обязателен, заполните поле",
+      minlength: "Введите корректный телефон вида +7(000)000-00-00"
+    },
     userEmail: {
       required: "Обязательно укажите email",
       email: "Введите корректный email name@domain.com"
@@ -190,11 +196,7 @@ $(".footer__form").validate({
     },
     footer_userPhone: "required",
     // compound rule
-    footer_userEmail: {
-      required: true,
-      email: true
-    },
-    userQuestion: "required"
+    footer_userQuestion: "required"
   },
   messages: {
     footer_userName: {
@@ -205,7 +207,7 @@ $(".footer__form").validate({
     footer_userPhone: "Телефон обязателен, заполните поле",
     footer_userQuestion: "Пожалуйста, уточните, что вас интересует"
   },
-    errorClass: "invalid",
+    errorClass: "invalid"
 
       /* submitHandler: function(form) {
       $.ajax({
@@ -226,7 +228,7 @@ $(".footer__form").validate({
 });
 // Маска для телефона
 
-$('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
+$('[type=tel]').mask('+7(000)000-00-00', {placeholder: "+7(___) ___-__-__"});
 
 
   // создание яндекс карты

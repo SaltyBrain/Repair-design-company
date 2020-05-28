@@ -897,6 +897,16 @@ input.invalid {
     margin-bottom: 3.428rem; }
   .modal__input:last-of-type {
     margin-bottom: 1rem; }
+  .modal__input::-webkit-input-placeholder {
+    color: #fff; }
+  .modal__input::-moz-placeholder {
+    color: #fff; }
+  .modal__input:-ms-input-placeholder {
+    color: #fff; }
+  .modal__input::-ms-input-placeholder {
+    color: #fff; }
+  .modal__input::placeholder {
+    color: #fff; }
   .modal__policy {
     margin-bottom: 2.7rem; }
   .modal__button {
@@ -976,6 +986,16 @@ input.invalid {
     margin: auto; }
   .footer__input {
     padding-top: 0.3rem; }
+    .footer__input::-webkit-input-placeholder {
+      color: #fff; }
+    .footer__input::-moz-placeholder {
+      color: #fff; }
+    .footer__input:-ms-input-placeholder {
+      color: #fff; }
+    .footer__input::-ms-input-placeholder {
+      color: #fff; }
+    .footer__input::placeholder {
+      color: #fff; }
     .footer__input-group {
       display: flex;
       flex-direction: column;
