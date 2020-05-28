@@ -238,7 +238,7 @@ $('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
 
 
   // создание яндекс карты
-  ymaps.ready(function () {
+ ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
             center: [60.005036, 30.210280],
             zoom: 9
@@ -266,8 +266,41 @@ $('[type=tel]').mask('+7(000)00-00-000', {placeholder: "+7(___) __-__-___"});
             // её "ножки" (точки привязки).
             iconImageOffset: [-5, -38]
         });
-
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects
         .add(myPlacemark)
-});
+}); 
+
+ymaps.ready(function () {
+  var myMap = new ymaps.Map('map__mobile', {
+          center: [60.005036, 30.210280],
+          zoom: 9
+      }, {
+          searchControlProvider: 'yandex#search'
+      }),
+
+      // Создаём макет содержимого.
+      MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+      ),
+
+      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Наш офис',
+          balloonContent: 'Вход со двора'
+      }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: 'img/pasha-img.jpg',
+          // Размеры метки.
+          iconImageSize: [32, 40],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-5, -38]
+      });
+  myMap.behaviors.disable('scrollZoom');
+  myMap.geoObjects
+      .add(myPlacemark)
+}); 
 });
