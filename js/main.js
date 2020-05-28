@@ -151,7 +151,10 @@ $(".control__form").validate({
       minlength: 2,
       maxlength: 15
     },
-    control_userPhone: "required",
+    control_userPhone: {
+      required: true,
+      minlength: 16
+    },
     // compound rule
     control_userEmail: {
       required: true,
@@ -164,7 +167,10 @@ $(".control__form").validate({
       minlength: "Имя не короче двух букв",
       maxlength: "Имя не должно быть больше пятнадцати символов"
     },
-    control_userPhone: "Телефон обязателен, заполните поле",
+    control_userPhone: {
+      required: "Телефон обязателен, заполните поле",
+      minlength: "Введите корректный телефон вида +7(000)000-00-00"
+    },
   },
     errorClass: "invalid",
 
@@ -194,7 +200,10 @@ $(".footer__form").validate({
       minlength: 2,
       maxlength: 15
     },
-    footer_userPhone: "required",
+    footer_userPhone: {
+      required: true,
+      minlength: 16
+    },
     // compound rule
     footer_userQuestion: "required"
   },
@@ -204,7 +213,10 @@ $(".footer__form").validate({
       minlength: "Имя не короче двух букв",
       maxlength: "Имя не должно быть больше пятнадцати символов"
     },
-    footer_userPhone: "Телефон обязателен, заполните поле",
+    footer_userPhone: {
+      required: "Телефон обязателен, заполните поле",
+      minlength: "Введите корректный телефон вида +7(000)000-00-00"
+    },
     footer_userQuestion: "Пожалуйста, уточните, что вас интересует"
   },
     errorClass: "invalid"
