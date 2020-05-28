@@ -119,7 +119,7 @@ $(".modal__form").validate({
   },
     errorClass: "invalid",
 
- /*    submitHandler: function(form) {
+    submitHandler: function(form) {
       $.ajax({
         type: "POST",
         url: "send.php",
@@ -134,42 +134,38 @@ $(".modal__form").validate({
           console.error('Ошибка запроса ' + response);
         }
       });
-    } */
+    } 
 });
 
 $(".control__form").validate({
   rules: {
     // simple rule, converted to {required:true}
-    userName: {
+    control_userName: {
       required: true,
       minlength: 2,
       maxlength: 15
     },
-    userPhone: "required",
+    control_userPhone: "required",
     // compound rule
-    userEmail: {
+    control_userEmail: {
       required: true,
       email: true
     }
   },
   messages: {
-    userName: {
+    control_userName: {
       required: "Имя обязательно, заполните поле",
       minlength: "Имя не короче двух букв",
       maxlength: "Имя не должно быть больше пятнадцати символов"
     },
-    userPhone: "Телефон обязателен, заполните поле",
-    userEmail: {
-      required: "Обязательно укажите email",
-      email: "Введите корректный email name@domain.com"
-    }
+    control_userPhone: "Телефон обязателен, заполните поле",
   },
     errorClass: "invalid",
 
- /*    submitHandler: function(form) {
+      submitHandler: function(form) {
       $.ajax({
         type: "POST",
-        url: "send.php",
+        url: "send_control.php",
         data: $(form).serialize(),
         success: function (response) {
           console.log('Ajax сработал. Ответ сервера' + response);
@@ -181,44 +177,40 @@ $(".control__form").validate({
           console.error('Ошибка запроса ' + response);
         }
       });
-    } */
+    } 
 });
 
 $(".footer__form").validate({
   rules: {
     // simple rule, converted to {required:true}
-    userName: {
+    footer_userName: {
       required: true,
       minlength: 2,
       maxlength: 15
     },
-    userPhone: "required",
+    footer_userPhone: "required",
     // compound rule
-    userEmail: {
+    footer_userEmail: {
       required: true,
       email: true
     },
     userQuestion: "required"
   },
   messages: {
-    userName: {
+    footer_userName: {
       required: "Имя обязательно, заполните поле",
       minlength: "Имя не короче двух букв",
       maxlength: "Имя не должно быть больше пятнадцати символов"
     },
-    userPhone: "Телефон обязателен, заполните поле",
-    userEmail: {
-      required: "Обязательно укажите email",
-      email: "Введите корректный email в формате name@domain.com"
-    },
-    userQuestion: "Пожалуйста, уточните, что вас интересует"
+    footer_userPhone: "Телефон обязателен, заполните поле",
+    footer_userQuestion: "Пожалуйста, уточните, что вас интересует"
   },
     errorClass: "invalid",
 
-/*     submitHandler: function(form) {
+      /* submitHandler: function(form) {
       $.ajax({
         type: "POST",
-        url: "send.php",
+        url: "send_footer.php",
         data: $(form).serialize(),
         success: function (response) {
           console.log('Ajax сработал. Ответ сервера' + response);
@@ -230,7 +222,7 @@ $(".footer__form").validate({
           console.error('Ошибка запроса ' + response);
         }
       });
-    } */
+    }   */
 });
 // Маска для телефона
 
