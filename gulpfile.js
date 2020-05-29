@@ -4,7 +4,7 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const minify = require('gulp-minify');
-
+const htmlmin = require('gulp-htmlmin')
 
 
 function bs() {
@@ -37,15 +37,34 @@ function buildCSS(done) {
 
 function buildJS(done) {
   src(['js/**.js', '!js/**.min.js'])
-      .pipe(minify({ext:{
-          min:'.js'
-        }
-    }))
+    .pipe(minify())
     .pipe(dest('dist/js/'));
+  src('js/**.min.js').pipe(dest('dist/js/'));
+  done();
+}
+
+function html(done) {
+  src('**.html')
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(dest('dist/'));
+  done();
+}
+
+function php(done) {
+  src('**.php')
+    .pipe(dest('dist/'));
+  src('phpmailer/**/**')
+    .pipe(dest('dist/phpmailer/'));
+  done();
+}
+
+function fonts(done) {
+  src('fonts/**/')
+  .pipe(dest('dist/'));
   done();
 }
 
 exports.serve = bs;
-exports.build = series(buildCSS, buildJS);
+exports.build = series(buildCSS, buildJS, html, php);
 
 
