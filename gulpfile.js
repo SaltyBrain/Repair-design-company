@@ -1,17 +1,10 @@
-const {src, dest, watch} = require('gulp');
+const {src, dest, watch, series} = require('gulp');
 const browserSync = require('browser-sync').create();
-const cssmin = require('gulp-cssmin');
-const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const minify = require('gulp-minify');
 
-function min(done) {
-  src('css/*.css')
-      .pipe(cssmin())
-      .pipe(rename({suffix: '.min'}))
-      .pipe(dest('css'));
-      done();
-};
 
 
 function bs() {
@@ -37,7 +30,22 @@ function serveSass() {
       .pipe(browserSync.stream());
 };
 
+function buildCSS(done) {
+  src('css/**/**.css').pipe(cleanCSS({compatibility: 'ie8'})).pipe(dest('dist/css/'));
+  done();
+}
+
+function buildJS(done) {
+  src(['js/**.js', '!js/**.min.js'])
+      .pipe(minify({ext:{
+          min:'.js'
+        }
+    }))
+    .pipe(dest('dist/js/'));
+  done();
+}
+
 exports.serve = bs;
-exports.min = min;
+exports.build = series(buildCSS, buildJS);
 
 
