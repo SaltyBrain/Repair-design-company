@@ -1,39 +1,9 @@
-/* document.addEventListener("DOMContentLoaded", function(event) { 
-   const modal = document.querySelector('.modal');
-   const modalButton = document.querySelectorAll('[data-toggle = modal]');
-   const closeBtn = document.querySelector('.modal__close');
-   const switchModal = () => {
-    modal.classList.toggle('modal--visible');
-   }
-
-   //adding modal--visible for click
-  modalButton.forEach (element => {
-    element.addEventListener('click', switchModal);
-  });
-
-  closeBtn.addEventListener('click', switchModal);
-
-  window.addEventListener("click", function(event) {
-    if (event.target == modal) {
-      modal.classList.remove('modal--visible');
-  }
-  });
-
-  window.onkeydown = function( event ) {
-    if ( event.keyCode == 27 ) {
-      modal.classList.remove('modal--visible');
-    }
-};
-
-}); */
-
-// 
  $(document).ready(function () {
    var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
     closeBtn = $('.modal__close');
   
-  modalBtn.on('click', function () {
+    modalBtn.on('click', function () {
     modal.toggleClass('modal--visible');
   });
   closeBtn.on('click', function () {
@@ -50,20 +20,6 @@
         modal.removeClass('modal--visible');
     }
   });
-
- $(function(){
-	$(window).scroll(function(){
-		if($(window).scrollTop() > 100) {
-			$('#scroll_top').show();  
-		} else {
-			$('#scroll_top').hide();
-		}
-	});
- 
-	$('#scroll_top').click(function(){
-		$('html, body').animate({scrollTop: 0}, 600);
-		return false;
-  });
   
   //initialize swiper when document ready
   var mySwiper = new Swiper ('.swiper-container', {
@@ -76,14 +32,14 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  })
+  });
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
 
   next.css('left', prev.width() + 25 + bullets.width() + 25);
   bullets.css('left', prev.width() + 25)
-});
+
 
 // активация анимаций wow
 new WOW().init();
@@ -106,7 +62,8 @@ $(".modal__form").validate({
     userEmail: {
       required: true,
       email: true
-    }
+    },
+    policy_checkbox: "required"
   },
   messages: {
     userName: {
@@ -121,20 +78,22 @@ $(".modal__form").validate({
     userEmail: {
       required: "Обязательно укажите email",
       email: "Введите корректный email name@domain.com"
-    }
+    },
+    policy_checkbox: "Заполните поле"
   },
     errorClass: "invalid",
 
-    submitHandler: function(form) {
+     submitHandler: function(form) {
       $.ajax({
-        type: "POST",
-        url: "send.php",
+        type: "GET",
+        url: "../src/send.php",
         data: $(form).serialize(),
         success: function (response) {
           console.log('Ajax сработал. Ответ сервера' + response);
           alert('Форма отправлена, мы свяжемся с вами через 10 минут')
           $(form)[0].reset();
-          modal.removeClass('modal--visible');
+          modal.removeClass('.modal--visible');
+          ym(64448002, 'reachGoal', 'request');
         },
         error: function(response) {
           console.error('Ошибка запроса ' + response);
@@ -159,6 +118,9 @@ $(".control__form").validate({
     control_userEmail: {
       required: true,
       email: true
+    },
+    control__policy: {
+      required: true
     }
   },
   messages: {
@@ -171,25 +133,27 @@ $(".control__form").validate({
       required: "Телефон обязателен, заполните поле",
       minlength: "Введите корректный телефон вида +7(000)000-00-00"
     },
+    control__policy: {
+      required: "Обязательное поле"
+    }
   },
     errorClass: "invalid",
 
-      submitHandler: function(form) {
+       submitHandler: function(form) {
       $.ajax({
         type: "POST",
-        url: "send_control.php",
+        url: "../src/send_control.php",
         data: $(form).serialize(),
         success: function (response) {
-          console.log('Ajax сработал. Ответ сервера' + response);
-          alert('Форма отправлена, мы свяжемся с вами через 10 минут')
           $(form)[0].reset();
-          modal.removeClass('modal--visible');
+          ym(64448002, 'reachGoal', 'callback');
+          return true;
         },
         error: function(response) {
           console.error('Ошибка запроса ' + response);
         }
       });
-    } 
+    }
 });
 
 $(".footer__form").validate({
@@ -205,7 +169,10 @@ $(".footer__form").validate({
       minlength: 16
     },
     // compound rule
-    footer_userQuestion: "required"
+    footer_userQuestion: "required",
+    footer__policy: {
+      required: true
+    }
   },
   messages: {
     footer_userName: {
@@ -217,26 +184,27 @@ $(".footer__form").validate({
       required: "Телефон обязателен, заполните поле",
       minlength: "Введите корректный телефон вида +7(000)000-00-00"
     },
-    footer_userQuestion: "Пожалуйста, уточните, что вас интересует"
+    footer_userQuestion: "Пожалуйста, уточните, что вас интересует",
+    footer__policy: "Заполните поле"
   },
-    errorClass: "invalid"
+    errorClass: "invalid",
 
-      /* submitHandler: function(form) {
+       submitHandler: function(form) {
       $.ajax({
         type: "POST",
-        url: "send_footer.php",
+        url: "../src/send_footer.php",
         data: $(form).serialize(),
         success: function (response) {
           console.log('Ajax сработал. Ответ сервера' + response);
           alert('Форма отправлена, мы свяжемся с вами через 10 минут')
           $(form)[0].reset();
-          modal.removeClass('modal--visible');
+          ym(64448002, 'reachGoal', 'callback');
         },
         error: function(response) {
           console.error('Ошибка запроса ' + response);
         }
       });
-    }   */
+    }  
 });
 // Маска для телефона
 
@@ -274,7 +242,7 @@ $('[type=tel]').mask('+7(000)000-00-00', {placeholder: "+7(___) ___-__-__"});
         });
     myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects
-        .add(myPlacemark)
+        .add(myPlacemark);
 }); 
 
 ymaps.ready(function () {
@@ -307,6 +275,46 @@ ymaps.ready(function () {
       });
   myMap.behaviors.disable('scrollZoom');
   myMap.geoObjects
-      .add(myPlacemark)
-}); 
+      .add(myPlacemark);
 });
+
+
+$('a[href^="#"], *[data-href^="#"]').on('click', function(e){
+  e.preventDefault();
+  var t = 800;
+  var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href');
+  $('html,body').animate({ scrollTop: $(d).offset().top }, t);
+});
+
+$(function(){
+	$(window).scroll(function(){
+		if($(window).scrollTop() > 100) {
+			$('#scroll_top').show();  
+		} else {
+			$('#scroll_top').hide();
+		}
+	});
+ 
+	$('#scroll_top').click(function(){
+		$('html, body').animate({scrollTop: 0}, 600);
+		return false;
+  });
+
+   var player;
+  $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '4',
+      width: '100%',
+      videoId: '9kl30htP1iw',
+      events: {
+        'onReady': videoPlay,
+      }
+    });
+  });
+
+  function videoPlay(event) {
+    event.target.playVideo();
+  }
+
+});
+ });

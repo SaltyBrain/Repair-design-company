@@ -79,6 +79,11 @@
         flex-basis: 50%
   .col-50
     max-width: 70%
+  .footer
+    &__wrap
+      margin-bottom: 0
+    &__contacts
+      padding-top: 3rem
 @media screen and ( max-width: 768px )
   .card
     &__pricetag
@@ -143,6 +148,8 @@
     &__policy
       margin-top: 0
       padding-bottom: 3.428rem
+      &__label
+        margin-top: 1.5rem
   .input
     &__control
       padding-left: 0
@@ -184,8 +191,6 @@
         color: $light
       &-group
         border-bottom: 1px solid #fff
-    &__video
-      min-height: 20rem
     &__input-group
       flex-basis: 100%
     &__label
@@ -203,6 +208,9 @@
       display: none
       &-contacts
         display: none
+    &__mobile
+      display: flex
+      flex-direction: column-reverse
     &__contacts
       display: flex
       flex-direction: column
@@ -213,7 +221,7 @@
         font-family: 'Yeseva One', cursive
         font-style: normal
         font-weight: 400
-        font-size: 1rem
+        font-size: 1.285rem
         line-height: 3rem
         text-transform: uppercase
       &-images
@@ -223,8 +231,9 @@
   #map__mobile
     display: block
     margin: auto
-    max-width: 24.28rem
+    width: 100%
     min-height: 18.2rem
+    margin-top: 4rem
 
 
 @media screen and ( max-height: 590px )

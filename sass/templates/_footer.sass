@@ -52,4 +52,26 @@
     &__mobile
       display: none
   &__contacts
-    display: none
+    max-width: 42rem
+    margin: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin-bottom: 3rem
+    padding-top: 5rem
+    &--header
+      font-family: 'Yeseva One', cursive
+      font-style: normal
+      font-weight: normal
+      font-size: 1.428
+      line-height: 2rem
+      text-align: center
+      text-transform: uppercase
+      color: $primary
+    &-images
+      &--mail
+        margin-right: 1.428rem
+      &--mail,&--photo
+        width: 28px
+        height: 28px

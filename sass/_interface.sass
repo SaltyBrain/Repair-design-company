@@ -51,7 +51,7 @@
   &__checkbox
     opacity: 0
     visibility: hidden
-    &:checked +
+    &:checked ~
       .policy__label
         &::before
           background: $primary url('../img/check.svg') no-repeat center / 0.8rem
@@ -100,10 +100,13 @@ input
 
 .footer
   &__policy
+    display: flex
+    flex-direction: column-reverse
+    align-items: center
     &__checkbox
       opacity: 0
       visibility: hidden
-      &:checked +
+      &:checked ~
         .footer__policy__label
           &::before
             background: $primary url('../img/check.svg') no-repeat center
@@ -125,7 +128,7 @@ input
     &__checkbox
       opacity: 0
       visibility: hidden
-      &:checked +
+      &:checked ~
         .control__policy__label
           &::before
             background: $primary url('../img/check.svg') no-repeat center
