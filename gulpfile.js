@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const minify = require('gulp-minify');
 const htmlmin = require('gulp-htmlmin')
+const tinypng = require('gulp-tinypng-compress');
 
 
 function bs() {
@@ -60,11 +61,20 @@ function php(done) {
 
 function fonts(done) {
   src('fonts/**/')
-  .pipe(dest('dist/'));
+  .pipe(dest('dist/fonts'));
+  done();
+}
+
+function imagemin(done) {
+  src('img/**/**')
+    .pipe(tinypng({key: 'wTNyXswM81HFmgYxQWgWcz0Ss6szWs6C'}))
+    .pipe(dest('dist/img/'))
+  src('img/**/*.svg')
+    .pipe(dest('dist/img/'))
   done();
 }
 
 exports.serve = bs;
-exports.build = series(buildCSS, buildJS, html, php);
+exports.build = series(buildCSS, buildJS, html, php, fonts, imagemin);
 
 
