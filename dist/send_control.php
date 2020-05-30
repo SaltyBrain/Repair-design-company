@@ -35,7 +35,6 @@ try {
     $control_mail->Body    = "Имя: ${control_userName}, Телефон: ${control_userPhone}";
 
     if ($control_mail->send()) {
-      header('Location: thanks.html');
     } else {
       echo "Message could not be sent. Mailer Error: {$control_mail->ErrorInfo}";
     }

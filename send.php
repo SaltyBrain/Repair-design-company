@@ -1,7 +1,7 @@
 <?php
-  $userName = $_GET['userName'];
-  $userEmail = $_GET['userEmail'];
-  $userPhone = $_GET['userPhone'];
+  $userName = $_POST['userName'];
+  $userEmail = $_POST['userEmail'];
+  $userPhone = $_POST['userPhone'];
 
 
 // Import PHPMailer classes into the global namespace

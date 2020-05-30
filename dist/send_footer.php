@@ -35,7 +35,6 @@ try {
     $footer_mail->Body    = "Имя: ${footer_userName}, Телефон: ${footer_userPhone}, Вопрос: ${footer_userQuestion}";
 
     if ($footer_mail->send()) {
-      header('Location: thanks.html');
     } else {
       echo "Message could not be sent. Mailer Error: {$footer_mail->ErrorInfo}";
     }

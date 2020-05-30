@@ -1,7 +1,7 @@
 <?php
-  $userName = $_GET['userName'];
-  $userEmail = $_GET['userEmail'];
-  $userPhone = $_GET['userPhone'];
+  $userName = $_POST['userName'];
+  $userEmail = $_POST['userEmail'];
+  $userPhone = $_POST['userPhone'];
 
 
 // Import PHPMailer classes into the global namespace
@@ -36,7 +36,6 @@ try {
     $mail->Body    = "Имя: ${userName}, Телефон: ${userPhone}, Почта: ${userEmail}";
 
     if ($mail->send()) {
-      header('Location: thanks.html');
     } else {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
