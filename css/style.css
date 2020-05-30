@@ -1044,6 +1044,9 @@ input.invalid {
     justify-content: center;
     margin-bottom: 3rem;
     padding-top: 5rem; }
+    .footer__contacts--ref {
+      text-decoration: none;
+      color: #E3B873; }
     .footer__contacts--header {
       font-family: 'Yeseva One', cursive;
       font-style: normal;
@@ -1314,7 +1317,6 @@ input.invalid {
     display: block;
     margin: auto;
     width: 100%;
-    min-height: 18.2rem;
     margin-top: 4rem; } }
 
 @media screen and (max-height: 590px) {
